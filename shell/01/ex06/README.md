@@ -1,3 +1,7 @@
+[Display one line of two with sed - Stack Overflow](https://stackoverflow.com/a/51615330)
+
+---
+
 `sed -n 'p;n'`
 
 `-n` suppresses all output that isn't explicitly printed.
