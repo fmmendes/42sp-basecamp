@@ -15,7 +15,8 @@ echo ""
 echo "obase=13;ibase=5;" $(echo $FT_NBR1 | tr "\'" '0' | tr '\\\"\?\!' "1234") + $(echo $FT_NBR2 | tr "mrdoc" "01234") | bc 
 echo ""
 
-#traduzindo o resultado par na base "gtaio luSnemf"(sim, o espaço conta)
+# traduzindo o resultado par na base "gtaio luSnemf"(sim, o espaço conta)
+# https://unix.stackexchange.com/a/199620
 echo "obase=13;ibase=5;" $(echo $FT_NBR1 | tr "\'" '0' | tr '\\\"\?\!' "1234") + $(echo $FT_NBR2 | tr "mrdoc" "01234") | bc | tr '0123456789ABC' 'gtaio\ luSnemf'
 echo ""
 
