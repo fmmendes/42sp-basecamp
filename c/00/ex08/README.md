@@ -1,4 +1,4 @@
-Se existir uma forma mais simples alguém me avisa :smile:
+Tava escrevendo esse doc mas cansei :sorry:
 ```c
 #include <unistd.h>
 
