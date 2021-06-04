@@ -2,11 +2,13 @@
 FT_NBR1=\\\'?\"\\\"\'\\
 FT_NBR2=rcrdmddd
 
-# traduzir o nbr1 na base '\"?!
+# traduzir o nbr1 na base  ' \ " ? !
+#                          0 1 2 3 4
 echo $FT_NBR1 
 echo $FT_NBR1 | tr "\'" '0' | tr '\\\"\?\!' "1234"
 echo ""
 # traduzir o nbr2 na base mrdoc
+#                         01234
 echo $FT_NBR2
 echo $FT_NBR2 | tr "mrdoc" "01234"
 echo ""
