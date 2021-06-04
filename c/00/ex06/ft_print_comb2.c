@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fimoraes <fimoraes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/03 00:10:27 by fimoraes          #+#    #+#             */
-/*   Updated: 2021/06/03 00:51:27 by fimoraes         ###   ########.fr       */
+/*   Created: 2021/06/03 14:50:11 by fimoraes          #+#    #+#             */
+/*   Updated: 2021/06/03 15:16:52 by fimoraes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,28 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_is_negative(int n)
+void	ft_print_comb2(void)
 {
-	char	c;
+	int	i;
+	int	j;
 
-	if (n >= 0)
+	i = 0;
+	while (i <= 98)
 	{
-		c = 'P';
+		j = i + 1;
+		while (j <= 99)
+		{
+			ft_putchar((i / 10) + '0');
+			ft_putchar((i % 10) + '0');
+			ft_putchar(' ');
+			ft_putchar((j / 10) + '0');
+			ft_putchar((j % 10) + '0');
+			if (i != 98 || j != 99)
+			{
+				write(1, ", ", 2);
+			}
+			j++;
+		}
+		i++;
 	}
-	else
-	{
-		c = 'N';
-	}
-	ft_putchar(c);
 }
