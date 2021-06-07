@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fimoraes <fimoraes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 22:21:40 by fimoraes          #+#    #+#             */
-/*   Updated: 2021/06/06 14:38:54 by fimoraes         ###   ########.fr       */
+/*   Created: 2021/06/07 03:57:40 by fimoraes          #+#    #+#             */
+/*   Updated: 2021/06/07 04:09:09 by fimoraes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	rush(int x, int y);
+#include <unistd.h>
 
-int	main(void)
+void	ft_putstr(char *str)
 {
-	rush(5, 5);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
 }

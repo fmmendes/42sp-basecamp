@@ -1,19 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fimoraes <fimoraes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/04 22:21:40 by fimoraes          #+#    #+#             */
-/*   Updated: 2021/06/06 14:38:54 by fimoraes         ###   ########.fr       */
+/*   Created: 2021/06/07 03:50:45 by fimoraes          #+#    #+#             */
+/*   Updated: 2021/06/07 03:54:39 by fimoraes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	rush(int x, int y);
-
-int	main(void)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	rush(5, 5);
-	return (0);
+	int	div;
+	int	mod;
+
+	div = *a / *b;
+	mod = *a % *b;
+	*a = div;
+	*b = mod;
 }
