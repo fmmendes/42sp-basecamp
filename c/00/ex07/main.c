@@ -1,27 +1,23 @@
 #include <stdio.h>
+#include <limits.h>
+#include <unistd.h>
 
-void	ft_putnbr(int n);
+void	ft_putnbr(int nb);
 
-int		main(void)
+int main(void)
 {
-    printf(" (printed) should be 1");
-    ft_putnbr(1);
-    printf("\n (printed) should be 0");
-    ft_putnbr(0);
-    printf("\n (printed) should be -1");
-    ft_putnbr(-1);
-	printf("\n (printed) should be 42");
-    ft_putnbr(42);
-	printf("\n (printed) should be -42");
-    ft_putnbr(-42);
-	printf("\n (printed) should be 1024");
-    ft_putnbr(1024);
-	printf("\n (printed) should be -1024");
-    ft_putnbr(-1024);
-    printf("\n (printed) should be 2147483647");
-    ft_putnbr(2147483647);
-    printf("\n (printed) should be -21474836478");
-    ft_putnbr(-2147483648);
-    printf("\n");
-    return (0);
+	write(1, "-1: ", 4);
+	ft_putnbr(-1);
+	write(1, "\n1: ", 4);
+	ft_putnbr(1);
+	write(1, "\n-10: ", 6);
+	ft_putnbr(-10);
+	write(1, "\n10: ", 5);
+	ft_putnbr(10);
+	write(1, "\nINT_MAX: ", 10);
+	ft_putnbr(INT_MAX);
+	write(1, "\nINT_MIN: ", 10);
+	ft_putnbr(INT_MIN);
+	write(1, "\n", 1);
+	return (0);
 }

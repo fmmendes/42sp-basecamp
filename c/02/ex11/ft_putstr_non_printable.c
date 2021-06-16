@@ -25,7 +25,7 @@ static void	print_hex(int np)
 ** preceeded by a "backslash".
 */
 
-void		ft_putstr_non_printable(char *str)
+void	ft_putstr_non_printable(char *str)
 {
 	int		i;
 

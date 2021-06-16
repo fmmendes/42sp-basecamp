@@ -1,6 +1,6 @@
 void	ft_swap(int *a, int *b)
 {
-	int aux;
+	int	aux;
 
 	aux = *a;
 	*a = *b;
@@ -11,7 +11,6 @@ void	ft_sort_int_tab(int *tab, int size)
 {
 	int	i;
 	int	j;
-	int tmp;
 
 	i = 0;
 	j = 0;
@@ -20,9 +19,7 @@ void	ft_sort_int_tab(int *tab, int size)
 		while (j < size)
 		{
 			if (tab[i] > tab[j])
-			{
-                ft_swap(&tab[i], &tab[j])
-			}
+				ft_swap(&tab[i], &tab[j]);
 			j++;
 		}
 		i++;

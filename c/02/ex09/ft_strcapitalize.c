@@ -1,25 +1,25 @@
 char	*ft_strcapitalize(char *str)
 {
-	int c;
-	int i;
+	int	i;
+	int	capitalize;
 
-	c = 0;
 	i = 0;
-	while (str[c] != '\0')
+	capitalize = 0;
+	while (str[i] != '\0')
 	{
-		if (i == 0 && (str[c] >= 'a' && str[c] <= 'z'))
+		if (capitalize == 0 && (str[i] >= 'a' && str[i] <= 'z'))
 		{
-			str[c] -= 'a' - 'A';
-			i++;
+			str[i] -= 32;
+			capitalize++;
 		}
-		else if (i > 0 && (str[c] >= 'A' && str[c] <= 'Z'))
-			str[c] += 'a' - 'A';
-		else if ((str[c] < '0') || (str[c] > '9' && str[c] < 'A')
-				|| (str[c] > 'Z' && str[c] < 'a') || (str[c] > 'z'))
-			i = 0;
+		else if (capitalize > 0 && (str[i] >= 'A' && str[i] <= 'Z'))
+			str[i] += 32;
+		else if ((str[i] < '0') || (str[i] > '9' && str[i] < 'A')
+			|| (str[i] > 'Z' && str[i] < 'a') || (str[i] > 'z'))
+			capitalize = 0;
 		else
-			i++;
-		c++;
+			capitalize++;
+		i++;
 	}
 	return (str);
 }
