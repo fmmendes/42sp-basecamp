@@ -1,29 +1,46 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
+#include <limits.h>
+#include <ctype.h>
 
 int	ft_strcmp(char *s1, char *s2);
 
+int	same_sign(int a, int b)
+{
+	if (a < 0 && b < 0)
+		return (0);
+	else if (a > 0 && b > 0)
+		return (0);
+	else if (a == 0 && b == 0)
+		return (0);
+	return (1);
+}
+
 int	main(void)
 {
-	char *s1;
-	char *s2;
-	char *s3;
-	char *s4;
-	char s5[] = {'a', 'b', 'c', -10, -20, '\0'};
+	printf("-- Exercício 00: ");
+	char str0[] = "string";
+	char str1[] = "string1";
+	char str2[] = "abcdef";
+	char str3[] = "fedcba";
+	char str4[] = {-123, -56, 6, 32, 64, 65, 66, 0};
+	char str5[] = "abcdefghijadofhiasdfj";
+	char str6[] = "abcdefghijadfedcba";
 
-	s1 = calloc(10, sizeof(char)); 
-	s2 = calloc(8, sizeof(char)); 
-	s3 = calloc(10, sizeof(char)); 
-	s4 = calloc(10, sizeof(char)); 
-	s1 = "abcdefghi";
-	s2 = "abcdefg";
-	s3 = "abcdEfghi";
-	s4 = "ab0defghi";
-	printf("s1: %s, s2: %s, s3: %s, s4: %s, s5: %s\n", s1, s2, s3, s4, s5);
-	printf("cmp_12 = %d, og_cmp_12 = %d\n", ft_strcmp(s1, s2), strcmp(s1, s2));
-	printf("cmp_13 = %d, og_cmp_13 = %d\n", ft_strcmp(s1, s3), strcmp(s1, s3));
-	printf("cmp_14 = %d, og_cmp_14 = %d\n", ft_strcmp(s1, s4), strcmp(s1, s4));
-	printf("cmp_15 = %d, og_cmp_15 = %d\n", ft_strcmp(s1, s5), strcmp(s1, s5));
+	int ret0 = strcmp(str0, str1);
+	int ret1 = ft_strcmp(str0, str1);
+
+	if (same_sign(strcmp(str0, str1), ft_strcmp(str0, str1)))
+		printf("KO t1, expected %i got %i\n", ret0, ret1);
+	else if (same_sign((ret0 = strcmp(str1, str2)), (ret1 = ft_strcmp(str1, str2))))
+		printf("KO t2, expected %i got %i\n", ret0, ret1);
+	else if (same_sign((ret0 = strcmp(str2, str3)), (ret1 = ft_strcmp(str2, str3))))
+		printf("KO t3, expected %i got %i\n", ret0, ret1);
+	else if (same_sign((ret0 = strcmp(str3, str4)), (ret1 = ft_strcmp(str3, str4))))
+		printf("KO t4, expected %i got %i\n", ret0, ret1);
+	else if (same_sign((ret0 = strcmp(str5, str6)), (ret1 = ft_strcmp(str5, str6))))
+		printf("KO t5, expected %i got %i\n", ret0, ret1);
+	else
+		printf("OK\n");
 	return(0);
 }

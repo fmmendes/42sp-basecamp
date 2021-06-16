@@ -1,8 +1,7 @@
 #include <stdio.h>
-#include <string.h>
+#include <bsd/string.h> //compilar passando -lbsd pro gcc
 #include <stdlib.h>
 
-unsigned int 	strlcat(char *dest, char *src, unsigned int size);
 unsigned int 	ft_strlcat(char *dest, char *src, unsigned int size);
 
 void			ft_strlcat_test(char *dest, char *ft_dest, char *src, unsigned int size)

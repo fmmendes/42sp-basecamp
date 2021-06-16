@@ -6,7 +6,7 @@
 /*   By: fimoraes <fimoraes@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/03 21:07:11 by fimoraes          #+#    #+#             */
-/*   Updated: 2021/06/04 01:30:39 by fimoraes         ###   ########.fr       */
+/*   Updated: 2021/06/11 03:56:49 by fimoraes         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_print_range(int *range, int n)
 		return ;
 	i = -1;
 	while (++i < n)
-		ft_putchar(range[i] + 48);
+		ft_putchar(range[i] + '0');
 	if (range[0] < (10 - n))
 	{
 		ft_putchar(',');
