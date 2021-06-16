@@ -9,5 +9,7 @@ int	ft_str_is_printable(char *str)
 			return (0);
 		i++;
 	}
+	if (i==0 && str[i] == '\0')
+			return (0);
 	return (1);
 }

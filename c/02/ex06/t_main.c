@@ -1,25 +1,24 @@
 #include <stdio.h>
+#include <ctype.h>
 
 int		ft_str_is_printable(char *str);
 
 int		main(void)
 {
-	char string[] = "Normal characters string";
-	char *p_str;
-	p_str = string;
+	char buffer0[100];
 
-	char unpr[] = "Unprintables: \t (tab), \a (?)";
-	char *p_unp;
-	p_unp = unpr;
+	buffer0[1] = 0;
+	for(int i = 0; i <= 127; ++i)
+	{
+		buffer0[0] = i;
+		if ((!!isprint(i)) != (!!ft_str_is_printable(buffer0)))
+			if (i != 0)
+				{
+					printf("KO char %i is %sprintable\n", i, isprint(i) ? "" : "not ");
+					return (0);
+				}
+	}
 
-	char empty[] = "";
-	char *p_emp;
-	p_emp = empty;
-
-	printf("-----\n1 = Contains only printable characters\n0 = Contains unprintable characters\n\n");
-	printf("%s = %d\n", string, ft_str_is_printable(p_str));
-	printf("%s = %d\n", unpr, ft_str_is_printable(p_unp));
-	printf("Empty = %d\n-----\n", ft_str_is_printable(p_emp));
-
+	printf("OK");
 	return (0);
 }
